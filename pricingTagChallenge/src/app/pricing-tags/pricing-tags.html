@@ -1,0 +1,37 @@
+<div class="min-h-screen w-screen py-16 px-4 bg-gray-100">
+  <div class="flex flex-col items-center justify-center">
+    <h1 class="text-center text-5xl font-bold mb-16">Choisissez Votre Plan</h1>
+
+    <div class="grid md:grid-cols-3">
+      @for (tag of tags; track $index) {
+      <div
+        class="transition transform duration-300 hover:-translate-y-2 hover:scale-105"
+      >
+        <div
+          class="bg-white h-full w-72 rounded-2xl mt-2 p-8 border border-gray-200 transition duration-300 hover:bg-blue-500 hover:text-white"
+        >
+          <h3 class="text-3xl font-bold mb-6 text-center">{{ tag.profil }}</h3>
+
+          <div class="mb-8 flex justify-center">
+            <span class="text-5xl font-extrabold t">{{ tag.price }}</span>
+          </div>
+
+          <div class="space-y-2">
+            <p class="border-t pt-2 text-base text-center">{{ tag.Allowed }}</p>
+            <p class="border-t pt-2 text-base text-center">
+              {{ tag.stockage }}
+            </p>
+            <p class="border-t pt-2 text-base text-center">{{ tag.users }}</p>
+          </div>
+
+          <button
+            class="w-full mt-8 py-3 rounded-xl font-semibold bg-blue-400 transition-all hover:bg-white hover:text-blue-600 hover:scale-105"
+          >
+            En savoir plus
+          </button>
+        </div>
+      </div>
+      }
+    </div>
+  </div>
+</div>
